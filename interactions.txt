@@ -1,0 +1,51 @@
+1. init
+
+emitter: client
+data: player name
+
+reciever: server
+actions: 
+- joins client onto 'game' room
+- uses player name to create player
+object
+
+
+2. tickTock
+
+emitter: server
+data: playerX, playerY
+
+rec: client
+actions: 
+- sets player locX, locY to the given
+playerx, playerY
+
+3. initReturn
+
+emitter: server
+data: orbs
+
+rec: client
+actions:
+- set orbs data to client orbs var
+- starts tick event
+
+4. tick
+
+emitter: client
+data: xVector, yVecotr
+
+rec: server
+actions: 
+- uses directionalvectors to calculate 
+the new positions of the player
+
+5. tock
+emitter: server
+data: players
+
+rec: client
+actions: sets players = data.players
+- probably used to calculate scoreboard
+
+6.  
